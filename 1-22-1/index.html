@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Prodigy 1.22.1</title>
+    <title>ProdiPlus 1.22.1</title>
     <meta charset="UTF-8" />
     <meta name="description" content="The legendary math game Prodigy is now legendary again, and no longer a math game!"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -20,7 +19,7 @@
         
         body {
             margin: 0;
-            background-color: #55B9A7;
+            background-color: #627CDE;
             height: 100%;
             padding: 0 !important;
         }
@@ -136,7 +135,7 @@
         #first-loading-screen {
             height: 100%;
             width: 100%;
-            background-color: #55B9A7;
+            background-color: #627CDE;
         }
         
         .alert {
@@ -152,15 +151,12 @@
     </style>
 </head>
 <script id="advanced-modal-base-template" type="text/x-handlebars-template">
-
     <div class="modal--advanced__container">
         <div class="modal--advanced__controls"></div>
         <div class="modal--advanced__content"></div>
         <div class="modal--advanced__spinner"></div>
     </div>
-
 </script>
-
 <script id="modal-base-template" type="text/x-handlebars-template">
     <div class="slide-modal-heading"></div>
     <div class="modal-container">
@@ -175,25 +171,19 @@
             <label id="login-username-label" for="login-username">Email</label>
             <label id="login-username-label--error" for="login-username" class="label--error gone"></label>
             <input id="login-username" type="text">
-
             <label id="login-password-label" for="login-password">Password</label>
             <label id="login-password-label--error" for="login-password" class="label--error gone"></label>
             <input id="login-password" type="password">
         </div>
-
         <div class="modal-section">
             <button class="btn btn--md btn--block btn--primary">Login</button>
         </div>
     </form>
-
     <p class="text-left modal-section"><a class="js-forgot-pass login-modal__forgot-pass">I forgot my password</a></p>
 </script>
-
 <script id="forgot-password-modal-template" type="text/x-handlebars-template">
     <div class="modal--advanced__heading">Reset Password</div>
-
     <p class="js-hide-on-form-error text-left">Enter your email address and we’ll send you instructions to reset your password.</p>
-
     <form id="reset-pass-form">
         <div class="modal-section text-left">
             <label id="reset-pass-form-label--error" class="label--error gone"></label>
@@ -201,20 +191,16 @@
             <input id="reset-pass-email" type="text">
             <label id="reset-pass-email-label--error" for="reset-pass-email" class="label--error gone"></label>
         </div>
-
         <div class="modal-section">
             <button class="btn btn--md btn--block btn--primary">Submit Email</button>
         </div>
     </form>
 </script>
-
 <script id="forgot-password-success-modal-template" type="text/x-handlebars-template">
     <div class="modal--advanced__heading">Success!</div>
-
     <div class="modal-section text-left">
         <p>Instructions to reset your password have been emailed to you. Please check your email.</p>
     </div>
-
     <div class="modal-section">
         <button class="js-back-btn btn btn--md btn--block btn--primary">Ok</button>
     </div>
@@ -232,7 +218,6 @@
         </div>
     </div>
 </script>
-
 <script id="class-code-login-template" type="text/x-handlebars-template">
     <div class="modal-section-container">
         <div class="modal--advanced__heading">Verify your identity</div>
@@ -249,7 +234,6 @@
 		<a>Forgot your password? Click here</a>
 	</div>-->
 </script>
-
 <script id="class-code-register-template" type="text/x-handlebars-template">
     <div class="modal-section-container">
         <div class="modal--advanced__heading">Complete your Registration</div>
@@ -267,7 +251,6 @@
         </div>
     </div>
 </script>
-
 <script id="class-code-display-template" type="text/x-handlebars-template">
     <div class="modal-section-container">
         <div class="modal--advanced__heading">{{classCode}}</div>
@@ -282,65 +265,51 @@
         </div>
     </div>
 </script>
-
 <body>
-
     <div id='modals'>
         <div id='overlay-mask' class='overlay-mask' style='display:none;'></div>
     </div>
     <div id='first-loading-screen'></div>
-
     <div id="game-wrapper">
         <div id='game-container'>
-
         </div>
-
         <div id='external-content'>
-
         </div>
-
         <div id='external-ui'>
-
         </div>
-
         <div id='notices'>
         </div>
-
         <div id='popups'>
             <div id='dynamic-popups'></div>
         </div>
     </div>
-
     <div id="membership-flow"></div>
     <script src='https://web.archive.org/web/20161210015216/https://prodigy.blob.core.windows.net/prodigy-1-37-0/socket.io-1.3.5.js'></script>
     <script src="https://web.archive.org/web/20150910093225im_/https://www.prodigygame.com/assets/scripts/app/build/public.min.js?v=$webVersion"></script>
-    <script src="./js/phaser.min.js"></script>
+    <script src="https://xpmuser.github.io/prodidows/1-22-4/js/mod-handler.js"></script>
+    <script src="https://xpmuser.github.io/oldprodigy/1-22-1/js/phaser.min.js"></script>
     <script src="./js/game.min.js"></script>
-    <script src="./js/easystar-0.4.4.min.js"></script>
+    <script src="https://xpmuser.github.io/oldprodigy/1-22-1/js/easystar-0.4.4.min.js"></script>
     <script type="text/javascript">
         var prodigyWeb = {};
         prodigyWeb.country = undefined;
         prodigyWeb.gameVersion = '1-22-1';
-
         window.onload = function() {
             document.addEventListener("contextmenu", function(e) {
                 e.preventDefault();
             }, false);
             Boot.init();
         };
-
         window.onresize = function() {
             scroll(0, 0);
         };
     </script>
-
     <script>
         $('.announcement-close').click(function() {
             $('#service-announcement').remove();
         });
         var ua = navigator.userAgent,
             isiOS = /iPad/i.test(ua) || /iPhone/i.test(ua);
-
         prodigyWeb.membershipFlow = {
             $el: $("#membership-flow"),
             $game: $("#game-wrapper"),
@@ -355,12 +324,10 @@
                 this.closeCallback = callback;
                 var flowURL = window.location.origin + "/membership/index.php?tag=" + tag,
                     $iframeFlow = $("<iframe src='" + flowURL + "'>");
-
                 this.$el.show()
                     .append($iframeFlow);
                 this.$game.hide();
             },
-
             close: function(success) {
                 this.$el.hide().html("");
                 this.$game.show();
@@ -369,11 +336,9 @@
                 }
             }
         };
-
         if (isiOS) {
             prodigyWeb.membershipFlow.$el.addClass("iframe-ios-fix");
         }
-
         prodigyWeb.getClassCode = {
             open: function(callback) {
                 var classCodeModal = new SW.GetClassCodeModalView({
@@ -384,7 +349,5 @@
             }
         }
     </script>
-
 </body>
-
 </html>
